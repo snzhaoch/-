@@ -2,6 +2,7 @@ import os
 import platform
 from splinter import Browser
 from selenium import webdriver
+from utils import log
 import config
 
 
@@ -82,10 +83,10 @@ def find_website():
                         a.quote = quote
                         a.upvote = upvote
                         good += 1
-                        print(a)
-                print('拿到了最近5天的个人动态')
-                print('总计筛选了 {} 条信息'.format(total))
-                print('共有 {} 条合格信息'.format(good))
+                        log(a)
+                log('拿到了最近5天的个人动态')
+                log('总计筛选了 {} 条信息'.format(total))
+                log('共有 {} 条合格信息'.format(good))
                 break
             else:
                 browser.execute_script('window.scrollTo(0,document.body.scrollHeight);')

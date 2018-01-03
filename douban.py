@@ -1,6 +1,7 @@
 import os
 import requests
 from pyquery import PyQuery as pq
+from utils import log
 
 
 class Model():
@@ -94,7 +95,7 @@ def main():
     for i in range(0, 250, 25):
         url = 'https://movie.douban.com/top250?start={}'.format(i)
         movies = movies_from_url(url)
-        print('top250 movies', movies)
+        log('top250 movies', movies)
 
 
 if __name__ == '__main__':
